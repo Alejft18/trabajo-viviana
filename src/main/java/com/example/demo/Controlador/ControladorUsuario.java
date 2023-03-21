@@ -9,23 +9,20 @@ import java.util.ArrayList;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class ControladorUsuario {
-    servicioUsuario servicio=new servicioUsuario();
+    servicioUsuario servicio= new servicioUsuario();
 
-    @GetMapping("/listarUsuario")
-    public ArrayList<Usuario> listar(){
+    @GetMapping("/listarUsuarios")
+    public ArrayList<Usuario> listarUsuarios(){
         return servicio.listar();
     }
-
 
     @PostMapping("/agregarUsuario")
     public String agregar(@RequestBody Usuario usuario){
         return servicio.agregarUsuario(usuario);
     }
 
-
     @GetMapping("/buscarUsuario/{cod}")
-    public Usuario buscarUsuario(@PathVariable("cod") int codigo){
+    public Usuario buscarUsuario(@PathVariable("cod") int codigo) {
         return servicio.buscarUsuario(codigo);
     }
-
 }

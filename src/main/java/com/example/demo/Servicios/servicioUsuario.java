@@ -6,37 +6,31 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class servicioUsuario {
-    ArrayList<Usuario>lista=new ArrayList<>();
+    ArrayList<Usuario> lista=new ArrayList<>();
 
-    public servicioUsuario(){
-        lista.add(new Usuario(10,"Pepe", "Colombia",LocalDate.of(2023,02,28),"pepe@gmail.com"));
-        lista.add(new Usuario(20,"Marta", "Colombia",LocalDate.of(2023,10,03),"marta@gmail.com"));
-        lista.add(new Usuario(30,"Jhon", "España",LocalDate.of(2023,03,14),"john@gmail.com"));
-        lista.add(new Usuario(40,"Alejandro", "Argentina",LocalDate.of(2023,11,30),"alejandro@gmail.com"));
+
+    public servicioUsuario() {
+        lista.add(new Usuario(10,"Luisa","Alemania", LocalDate.of(2023,02,28), "luisa@gmail.com"));
+        lista.add(new Usuario(11,"Mateo","Mexico", LocalDate.of(2022,05,18), "mateo@gmail.com"));
+        lista.add(new Usuario(12,"Valentina","Rusia", LocalDate.of(2020,03,25), "valen@gmail.com"));
     }
 
-    public ArrayList<Usuario> listar() {
+    public ArrayList<Usuario> listar(){
         return lista;
     }
 
+    public String agregarUsuario(Usuario usu){
+        lista.add(usu);
+        return "Registro Exitoso";
+    }
+
     public Usuario buscarUsuario(int codigo){
-        Usuario usu=null;
-        for (Usuario us:lista){
-            if (us.getId()==codigo){
-                usu=us;
+        Usuario usu = null;
+        for (Usuario u: lista){
+            if (u.getId()==codigo){
+                usu=u;
             }
         }
         return usu;
     }
-
-
-    public String agregarUsuario(Usuario usu){
-        lista.add(usu);
-        return "Registro exitoso";
-    }
-
-
-
-
-
 }
