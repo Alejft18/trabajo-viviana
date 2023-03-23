@@ -25,4 +25,6 @@ public class ControladorUsuario {
     public Usuario buscarUsuario(@PathVariable("cod") int codigo) {
         return servicio.buscarUsuario(codigo);
     }
+
+
 }
