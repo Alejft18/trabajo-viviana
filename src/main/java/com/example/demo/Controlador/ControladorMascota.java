@@ -1,11 +1,13 @@
 package com.example.demo.Controlador;
 
 import com.example.demo.Entidades.Mascota;
+import com.example.demo.Entidades.Usuario;
 import com.example.demo.Servicios.servicioMascota;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
 public class ControladorMascota {
     servicioMascota mascota=new servicioMascota();
 
@@ -15,8 +17,25 @@ public class ControladorMascota {
     }
 
     @GetMapping("/cantidadMascotas")
-    public String cantidadMAscotas(){
+    public String cantidadMascotas(){
         return  mascota.cantidad();
 
+    }
+
+
+    @PostMapping("/agregarMascota")
+    public String agregar(@RequestBody Mascota mas){
+        return mascota.agregarMascota(mas);
+    }
+
+
+    @GetMapping("/buscarMascota/{cod}")
+    public Mascota buscarMascota(@PathVariable("cod") int codigo){
+        return mascota.buscarMascota(codigo);
+    }
+
+    @PutMapping("/actualizarMascota/{cod}")
+    public Mascota actualizarMascota(@PathVariable("cod") int codigo){
+        return mascota.actualizarMascota(codigo);
     }
 }
