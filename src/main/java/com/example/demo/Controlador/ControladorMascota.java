@@ -1,7 +1,6 @@
 package com.example.demo.Controlador;
 
 import com.example.demo.Entidades.Mascota;
-import com.example.demo.Entidades.Usuario;
 import com.example.demo.Servicios.servicioMascota;
 import org.springframework.web.bind.annotation.*;
 
