@@ -5,6 +5,7 @@ import com.example.demo.Servicios.servicioMascota;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class ControladorMascota {
@@ -18,9 +19,7 @@ public class ControladorMascota {
     @GetMapping("/cantidadMascotas")
     public String cantidadMascotas(){
         return  mascota.cantidad();
-
     }
-
 
     @PostMapping("/agregarMascota")
     public String agregar(@RequestBody Mascota mas){
