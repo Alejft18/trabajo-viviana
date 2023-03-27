@@ -40,14 +40,29 @@ public class servicioMascota {
         return masc;
     }
 
-
-    public Mascota actualizarMascota(int codigo){
-            String nombre = "";
-            int edad = 0;
-            String tipoMasocta = "";
-            String nombreDueno = "";
-
-            Mascota buscar = new Mascota(codigo, nombre, edad, tipoMasocta, nombreDueno);
-            return buscar;
+    public ArrayList<Mascota>buscarTipo(String tipoMascota){
+        ArrayList<Mascota>buscar=new ArrayList<>();
+        for (Mascota masco:lista){
+            if (masco.getTipoMascota().equals(tipoMascota)){
+                buscar.add(masco);
+            }
+        }
+        return buscar;
     }
+
+    public String eliminarMascota(int id){
+        String valor="No se encontró esta mascota";
+
+        for (Mascota mas:lista){
+            if (mas.getId()==id){
+                lista.remove(mas);
+                valor="Mascota eliminada con exito";
+            }
+        }
+        return valor;
+    }
+
+
+
+
 }

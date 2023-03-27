@@ -32,8 +32,11 @@ public class ControladorMascota {
         return mascota.buscarMascota(codigo);
     }
 
-    @PutMapping("/actualizarMascota/{cod}")
-    public Mascota actualizarMascota(@PathVariable("cod") int codigo){
-        return mascota.actualizarMascota(codigo);
+    @GetMapping("/buscarTipo/{tipo}")
+    public ArrayList<Mascota>buscarTipo(@PathVariable("tipo") String tipoMascota){return mascota.buscarTipo(tipoMascota);}
+
+    @DeleteMapping("/eliminarMascota/{cod}")
+    public String eliminarMAscota(@PathVariable("cod") int id){
+        return mascota.eliminarMascota(id);
     }
 }
