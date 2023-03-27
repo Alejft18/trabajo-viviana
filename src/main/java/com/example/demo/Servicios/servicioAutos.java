@@ -36,19 +36,16 @@ public class servicioAutos {
         return car;
     }
 
-    public String eliminarAutos(String placa_eli){
+    public String eliminarAuto(String placa_eli){
         String resp = "El Auto no se encontro";
         for (Autos a: carros){
-            if (a.getPlaca().equals(placa_eli) ) {
+            if (a.getPlaca().equals(placa_eli)){
                 carros.remove(a);
                 resp = "El auto se elimino";
             }
         }
         return resp;
     }
-
-
-
 
 
     public int cantidadAutos(){

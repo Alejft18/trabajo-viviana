@@ -28,7 +28,7 @@ public class ControladorAutos {
 
     @DeleteMapping("/eliminarAuto/{placa_eli}")
     public String eliminarAuto(@PathVariable("placa_eli") String placa_eli) {
-        return servicio.eliminarAutos(placa_eli);
+        return servicio.eliminarAuto(placa_eli);
     }
 
     @GetMapping("/cantidadAuto")
