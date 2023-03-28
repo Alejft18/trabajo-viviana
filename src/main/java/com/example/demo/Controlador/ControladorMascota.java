@@ -39,4 +39,9 @@ public class ControladorMascota {
     public String eliminarMAscota(@PathVariable("cod") int id){
         return mascota.eliminarMascota(id);
     }
+
+    @PostMapping("/modificarMascota")
+    public String actualizarMascota(@RequestBody Mascota masco){
+        return mascota.actualizarMascota(masco);
+    }
 }

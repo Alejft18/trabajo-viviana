@@ -63,6 +63,19 @@ public class servicioMascota {
     }
 
 
+    public String actualizarMascota(Mascota m){
+        for (Mascota mas: lista){
+            if (mas.getId()==m.getId()){
+                mas.setNombreMascota(m.getNombreMascota());
+                mas.setEdad(m.getEdad());
+                mas.setTipoMascota(m.getTipoMascota());
+                mas.setNombreDueno(m.getNombreDueno());
+            }
+        }
+        return "Datos modificados exitosamente";
+    }
+
+
 
 
 }
