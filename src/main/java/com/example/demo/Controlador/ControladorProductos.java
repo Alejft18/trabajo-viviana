@@ -27,10 +27,7 @@ public class ControladorProductos {
        return servicio.actualizar();
     }
 
-    @GetMapping("/total")
-    public double total(){
-        return servicio.total();
-    }
+
 
 
 }
